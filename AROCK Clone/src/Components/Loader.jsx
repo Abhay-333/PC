@@ -6,8 +6,7 @@ import { ExpoScaleEase } from 'gsap/EasePack'
 
 const Loader = () => {
     const progressRef = useRef()
-
-  gsap.registerPlugin(useGSAP);
+    
 
     useGSAP(()=>{
         gsap.to(progressRef.current,{

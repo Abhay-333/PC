@@ -1,8 +1,9 @@
 import React from "react";
 import { IoPlay } from "react-icons/io5";
+
 const HeroText = () => {
   return (
-    <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] uppercase">
+    <div className="absolute top-[50%] left-[50%] translate-x-[-50%] z-[99] translate-y-[-50%] uppercase">
       <h1 className="text-[17.5rem] font-black leading-[13rem] tracking-tighter">AROCK</h1>
 
       <div className="font1 flex items-center justify-between w-full ">
