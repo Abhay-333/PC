@@ -6,9 +6,6 @@ import { gsap } from "gsap/all";
 
 const Menu = (props) => {
   const menuRef = useRef(null);
-  // const closeRef = useRef(props.menuClicked)
-
-  console.log(props);
 
   const handleClose = () => {
     if (menuRef.current) {

@@ -37,3 +37,13 @@ body {
 .font1{
   font-family: font1;
 }
+
+h1 span{
+  text-shadow: 10px;
+  /* transform:; */
+  scale:0.9;
+  /* transform: rotate3d(1, 1, 1, 45deg);   */
+  display: inline-block;
+  
+  transform: translateY(110%) rotateX(30deg) rotateY(13deg) rotateZ(5deg);
+}
