@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
 
 function App() {
   const parentVariants = {
@@ -13,6 +13,14 @@ function App() {
   const childVariants = {
     visible:{opacity:1, y:0},
     hidden:{opacity:0, y:100},
+  }
+
+  const {scrollYProgress} = useScroll()
+  const [clicked, setClicked] = useState(false) 
+
+  const handlebtnClicked = ()=>{
+    setClicked(!clicked)
+    console.log(clicked)
   }
 
   return (
@@ -58,6 +66,22 @@ function App() {
 
         </motion.div>
       </div>
+
+      <motion.div style={{scaleX: scrollYProgress}} className="progressBar h-1 w-full bg-white fixed top-0 left origin-left rounded-xl"></motion.div>
+
+      <AnimatePresence >  {/*This is used to save memory */}
+        <div className="page3 h-screen w-full bg-zinc-800 p-10">
+          <motion.div 
+          layout
+          style={{
+            height: clicked?400:300,
+            width: clicked?400:300,
+          }} className="box4 h-[15rem] w-[15rem] bg-red-500 rounded-xl"></motion.div>
+          <button onClick={handlebtnClicked} className="bg-emerald-600 text-white font-bold p-5 rounded-lg mt-5">Click Here</button>
+        </div>
+      </AnimatePresence>
+
+
     </div>
   );
 }
